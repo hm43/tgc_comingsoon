@@ -1,0 +1,207 @@
+@font-face {
+    font-family: Pacifico;
+    src: url(../font/Pacifico.ttf);
+}
+
+*{
+	transition-property: all;
+	transition-duration: 2.5s;
+	font-family: 'Raleway', sans-serif;
+}
+body {
+	overflow: hidden;
+	margin: 0px;
+}
+div.bg{
+	position: absolute;
+  overflow: hidden;
+	width: 100%;
+	height: 100%;
+  background-image: url(../img/Geekswipe-Python-Twitter-bot-Source-Photo-by-Karthikeyan-KC.jpg);
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform:scale(2);
+}
+canvas {
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 90;
+  position: absolute;
+}
+div#l{
+  width: 100%;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  position: absolute;
+  display: flex;
+  min-height: 100vh;
+  background-color: rgb(0,0,0);
+  text-align: center;
+  color: #fff;
+}
+div#l *{
+  margin: auto;
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  font-size: bold;
+}
+
+.overlay-dash {
+    background: url(../img/overlay.svg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh !important;
+    z-index: 10;
+}
+.zout {
+    transform:scale(1) !important; /* <--- change the scale of zoom out as appropriate */
+}
+div#desc{
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-family: Pacifico;
+	z-index: 91;
+}
+div#desc div:first-child{	
+  margin: auto;
+  padding: 1em;
+  border-radius: 10px;
+  transition-duration: 0.5s !important;
+  color: #fff;
+  text-align: center;
+}
+
+
+div#desc div:first-child div{
+    font-family: Raleway,"Helvetica Neue","Lucida Grande",Arial,Verdana,sans-serif;
+}
+div#desc div:first-child div p {
+	line-height: 18px;
+	transition-duration: 0.2s !important;
+}
+div#desc div img{
+  width: 25%;
+}
+div#desc div h2{
+	padding: 0 15px 0 0;
+    margin-left: -10px;
+    color: #fff;
+    text-transform: none;
+    font-size: -webkit-xxx-large;
+    font-family: Pacifico,"Helvetica Neue","Lucida Grande",Arial,Verdana,sans-serif;
+}
+input{
+    background: transparent;
+    font-weight: 600;
+    padding: 1em 2.2em;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+    outline: none;
+}
+
+input:hover,input:active,input:focus{
+    border: 1px solid rgba(255,255,255,0.9);
+}
+button{
+	background: #446cb4;
+    font-weight: 600;
+    padding: 1em 2.2em;
+    color: #fff;
+    display: inline-block;
+    border: 1px solid #446cb4;
+    animation-name: fadeInUp;
+    cursor: pointer;
+}
+
+button:hover,button:active,button:focus{
+	background-color: #fff;
+	border-color: #fff;
+	color: #446cb4;
+}
+@media screen and (max-width: 640px) {
+  div#l *{
+    width: 60%;
+  }
+  div#desc div h2{
+    font-size: 100%;
+  }
+  input,button{    
+    margin-bottom: 10px;
+  }
+
+  div#desc div:first-child{
+    background: rgba(0,0,0,0.5);
+  }
+
+  div#popup{
+    margin: 10% 2% !important;
+  }
+}
+
+div#popup{
+  position: absolute;
+  z-index: -1;
+  background: #fff;
+  left: 0;
+  right: 0;
+  margin: 10% 42%;
+  padding: 20px;
+  text-align: center;
+  color: #5d70b4;
+  font-weight: 800;
+  opacity:0;
+}
+div#popup img{
+  width: 100%;
+}
+
+
+@-webkit-keyframes rotate @keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#l img
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         2s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-transition-timing-function: linear;
+
+
+    animation-name:             rotate; 
+    animation-duration:         2s; 
+    animation-iteration-count:  infinite;
+    transition-timing-function: linear;
+}
